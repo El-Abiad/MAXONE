@@ -28,8 +28,8 @@ def crossover(parent1, parent2):
     return offspring
 
 def remove_bad(population):
-    parents = sorted(population, key=fitness, reverse=True)
-    parents.pop()
+    population = sorted(population, key=fitness, reverse=True)
+    population.pop()
     return population
 
 def mutation(chromosome, mutation_rate):
@@ -41,14 +41,7 @@ def mutation(chromosome, mutation_rate):
 
 
 def get_best(population):
-    chromosome = []
-    best = 0
-    for i in population:
-        if sum(i) > best:
-            best = sum(i)
-            chromosome = i
-
-    return chromosome
+    return max(population, key=fitness)
 
 def genetic_algorithm(pop_size, n, generations, mutation_rate):
     population = initialize_population(pop_size, n)
@@ -65,12 +58,3 @@ def genetic_algorithm(pop_size, n, generations, mutation_rate):
         generations -= 1
 
     return get_best(population)
-
-n = 5
-pop_size = 10
-generations = 30
-mutation_rate = 0.2
-
-answer = genetic_algorithm(pop_size, n, generations, mutation_rate)
-
-print(answer)

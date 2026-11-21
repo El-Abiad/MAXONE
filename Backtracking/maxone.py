@@ -14,7 +14,3 @@ def backtrack(chromosome, n, i):
     chromosome.pop()
 
     return best
-
-len = 5
-chromosome = []
-print("Best fitness:", backtrack(chromosome, len, 0))
