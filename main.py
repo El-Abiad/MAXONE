@@ -3,10 +3,10 @@ from GA import maxone as ga
 from MA import maxone as ma
 
 def main():
-    n = 5
+    n = 10
     chromosome = []
     pop_size = 10
-    generations = 30
+    generations = 20
     mutation_rate = 0.2
     
     
@@ -14,9 +14,9 @@ def main():
     GA_ans = ga.genetic_algorithm(pop_size, n, generations, mutation_rate)
     MA_ans = ma.memetic_algorithm(pop_size, n, generations, mutation_rate)
 
-    print("Backtrack:", backtracking_ans)
-    print("GA:", GA_ans)
-    print("MA:", MA_ans)
+    print("Backtrack:\n", backtracking_ans)
+    print("GA:\n", GA_ans)
+    print("MA:\n", MA_ans)
     
 
 
